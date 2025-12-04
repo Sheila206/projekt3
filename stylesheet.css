@@ -1,6 +1,8 @@
 *{
     margin: 0;
     padding: 0;
+}
+body {
     background-color: #F5F3EE;
 }
 
@@ -26,34 +28,86 @@ nav img{
     text-align: right;
 }
 
+.nav-links ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px; 
+}
+
 .nav-links ul li{
 list-style: none;
 display: inline-block;
-padding: 8px 34px;
+padding: 8px 18px;
 position: relative;
 }
 
 .nav-links ul li a{
     color: #4B341D;
     text-decoration: none;
-    font-size: 20px
-}
-.nav-links ul li::after{
-    content: '';
-    width: 0%;
-    height: 2px;
-    background-color: #2E4F6F;
-    display:block;
-    margin: auto;
-    transition: 0.5s;
-}
-.nav-links ul li:hover::after{
-    width: 100%;
-}
-@media screen (max-width: 700px) {
-    .tekstboks h1 {
-        font: size 20px;
+    font-size: 18px;
+    transition: 0.15s ease-in-out; 
+    position:relative;
+    text-transform:uppercase; 
 
-    }
-    
 }
+.nav-links ul li a::after{
+    content:'';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color:#4B341D;
+    transition: 0.15s ease-in-out;
+}
+/*brugermenu*/
+.nav-links ul li a:hover:after{ width: 100%;}
+.open-menu, .close-menu{
+    position: absolute;
+    color:#4B341D;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+}
+.open-menu{
+    top:20px;
+    right:20px;
+    transform: translateY(-50%);
+    position: absolute;
+}
+.close-menu{
+    top:20px;
+    right: 20px;
+}
+
+#check {display: none;}
+
+
+@media screen and (max-width:610px){
+    .nav-links{
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 100%;
+        width: 80%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: #F5F3EE;
+        transition: all 0.2s ease-in-out;
+        gap:20px;
+    }
+.nav-links ul {
+    flex-direction: column;
+    gap: 30px;
+}
+.nav-links li {margin-top: 40px;}
+.nav-links li a{padding: 10px;}
+.open-menu, .close-menu {display: block;}
+}
+
+#check:checked ~ .nav-links {
+    right: 0;}
