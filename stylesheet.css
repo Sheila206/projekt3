@@ -1,11 +1,40 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body {
     background-color: #F5F3EE;
+    font-family: "playfair+Playfair", serif;
+}
+/*typografi for h1 h2 og p*/
+h1{
+    font-family:"Playfair Display", serif;
+    font-weight: 900;
+    font-size:4rem;
+    line-height:1.1;
+    color:#4B341D;
+    margin-bottom:  20px;
 }
 
+h2{
+    font-family:"Playfair Display", serif;
+    font-weight: 600;
+    font-size:2.4rem;
+    line-height:1.2;
+    color:#4B341D;
+    margin-bottom:  20px;
+}
+
+p{
+        font-family:"Playfair", serif;
+    font-weight: 400;
+    font-size:1.3rem;
+    line-height:1.6;
+    color:#4B341D;
+}
+
+/*header og navigation*/
 .header{
     width: 100%;
     padding-bottom: 60px;
@@ -19,17 +48,12 @@ nav{
     padding: top 10px bottom 20px left 40px right 40px;
 }
 
-/*logo*/
+/*logo og menu*/
 nav img{
    width: 140px;
 }
 
-@media screen and (max-width: 610px){
-    nav img {
-        width: 90px;
-    }
-}
-
+/*menu links desktop*/
 .nav-links{
     flex: 1;
     text-align: right;
@@ -76,6 +100,7 @@ position: relative;
     font-size: 1.2rem;
     display: none;
 }
+/*menu ikoner*/
 .open-menu{
     top: 28px;
     right: 32px;
@@ -95,8 +120,33 @@ position: relative;
 
 #check {display: none;}
 
+#check:checked ~ .nav-links {
+    right: 0;}
+
+/*main*/
+
+/*front side*/
+.textbox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 40px 20px;
+}
+
+/*mobil version*/
+
 @media screen and (max-width:610px){
-    .nav-links{
+   /*typografi mobil*/
+    h1{font-size: 2.5rem;}
+    h2{font-size: 1.8rem;}
+    p{font-size:1.1rem;}
+    
+    /*nav mobil*/
+        nav img {
+        width: 90px;
+    }
+     .nav-links{
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
@@ -111,8 +161,10 @@ position: relative;
         gap:40px;
         padding-top: 120px;
     }
-
-    .nav-links ul {
+        .open-menu, .close-menu {
+        display: block;
+    }
+        .nav-links ul {
         display: flex;
         flex-direction: column;
         gap: 30px;
@@ -128,10 +180,31 @@ position: relative;
         letter-spacing: 1px;
     }
 
-    .open-menu, .close-menu {
-        display: block;
+    /*forside layout mobil*/
+    .textbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+    /*front billede i rammme*/
+    .framesheila-img{
+        order: 1;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        padding: 10px 0px;
+    }  
+    .textbox-text {
+        order: 2;
+        text-align: center;
+        padding: 20px;
+        width: 100%;
+    }
+    .framesheila-img img {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
     }
 }
-
-#check:checked ~ .nav-links {
-    right: 0;}
