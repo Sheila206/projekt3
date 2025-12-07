@@ -1,64 +1,76 @@
+:root{
+    --space-s:20px;
+    --space-m:40px;
+    --space-l:80px;
+    --space-xl:120px;
+    --typografi-color:#4B341D; 
+    --background-color:#F5F3EE; 
+}
+
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body {
-    background-color: #F5F3EE;
-    font-family: "playfair+Playfair", serif;
+    background-color: var(--background-color);
+    font-family: "Playfair Display", serif;
+    line-height: 1.6;
 }
 /*typografi for h1 h2 og p*/
 
 h1{
     font-weight: 900;
-    line-height:1.1;
-    color:#4B341D;
-    margin-bottom:  20px;
+    color: var(--typografi-color);
     font-size: 1.8rem;
+    margin-bottom: var(--space-s);
 }
 
 h2{ 
     font-weight: 600;
-    font-size: 1.1rem
-    line-height:1.2;
-    color:#4B341D;
-    margin-bottom:  20px;
+    font-size: 1.4rem;
+    color: var(--typografi-color);
+    margin-bottom: var(--space-s);
 }
 /*h2 på en linje*/
 .single-line{
-    white-space: nowrap;
+    white-space: normal;
     text-align: center;
 }
 p{
-      font-weight: 400;
     font-size:1.1rem;
-    line-height:1.6;
-    color:#4B341D;
+    margin-bottom: var(--space-s);
+    color:var(--typografi-color);
 }
 
-/*header og navigation - mobile first*/
-.header{
-    width: 100%;
-    padding-bottom: 60px;
-}
+/*navigation - mobile first*/
 
 nav{
     display: flex;
     justify-content: space-between;
     align-items:center;
-    padding: 20px
+    padding: var(--space-s) var(--space-m);
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
 }
 
 /*logo og menu*/
 nav img{
    width: 120px;
+   display: block;
+   order: 1;
 }
 
-/*menu links desktop*/
+
+/*menu links mobile*/
 .nav-links{
+        display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: center;
+        text-align: center;
         width: 70%;
         height: 100vh;
         position: fixed;
@@ -67,8 +79,7 @@ nav img{
         z-index: 200;
         background-color: #F5F3EE;
         transition: all 0.3s ease-in-out;
-        gap:40px;
-        padding-top: 120px;
+        gap:var(--space-m);
 }
 
 .nav-links ul {
@@ -77,16 +88,15 @@ text-align: center;
 }
 
 .nav-links ul li{
-margin: 20px 0;
+margin: var(--space-s) 0;
 }
 
 .nav-links ul li a{
-    color: #4B341D;
+    color: var(--typografi-color);
     text-decoration: none;
     font-size: 18px;
     transition: 0.15s ease-in-out; 
     position:relative;
-
 }
 .nav-links ul li a::after{
     content:'';
@@ -99,30 +109,25 @@ margin: 20px 0;
     transition: 0.15s ease-in-out;
 }
 /* mobil brugermenu*/
-.nav-links ul li a:hover:after{ width: 100%;}
-.open-menu, .close-menu{
-    display: block;
-    position: absolute;
-    color:#4B341D;
-    cursor: pointer;
-    font-size: 1.2rem;
-}
-/*menu ikoner*/
-.open-menu{
-    top: 28px;
-    right: 32px;
-    position: absolute;
-    font-size: 2rem;
-    cursor: pointer;
-}
-.close-menu{
-    top: 28px;
-    right: 32px;
-    position: absolute;
-    font-size: 2rem;
-    cursor: pointer;
+.nav-links ul li a:hover:after{ width: 100%;} 
 
+    .open-menu{
+    top: 20px;
+    right: 32px;
+    font-size:2rem;
+    display:block;
+    color:var(--typografi-color);
 }
+
+.close-menu{
+    position: absolute;
+    top: 20px;
+    right: 32px;
+    font-size:2rem;
+    display:block;
+    cursor: pointer;
+    color:var(--typografi-color);
+    }
 
 #check {display: none;}
 
@@ -136,24 +141,77 @@ margin: 20px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-    padding: 20px;
+    justify-content: center;
+    text-align: center;
+    gap: var(--space-s);
+    padding: var(--space-s);
 }
 .framesheila-img{
-    order: 1;
+    order: 2;
 }
 
 .textbox-text{
-    order: 2;
+    order: 1;
     flex:1;
-    max-width: 500px;
+    max-width: 350px;
+    text-align: center;
 
 }
 .framesheila-img img{
     width: 100%;
     max-width: 350px;
+    margin: 0 auto;
+    display: block;
 }
+
+/*about me sektion*/
+.about-me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: var(--space-m) var(--space-m);
+}
+
+
+
+
+
+
+/*footer and contact*/
+    .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: var(--space-l) var(--space-m);
+    }
+
+/*lille mobil*/
+@media screen and (max-width:480px) {
+   .textbox{
+    gap: 20px;
+    padding: 20px;
+   }
+   .textbox-text h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+   }
+    .textbox-text h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+   }
+   .textbox-text p{
+    font-size: 1rem;
+   }
+   .framesheila-img{
+    max-width: 280px;
+   }
+}
+
+
 
 /*desktop version*/
 
@@ -163,7 +221,7 @@ margin: 20px 0;
     h2{font-size:2.4rem;}
 
     p{font-size:1.3rem;}
-
+    
     /*nav mobil*/
         nav img {
         width: 150px;
@@ -179,6 +237,9 @@ margin: 20px 0;
         gap: 30px;
     }
 
+    .open-menu, .close-menu{
+    display: none;
+    }
 
     /*forside layout mobil*/
     .textbox {
@@ -186,8 +247,8 @@ margin: 20px 0;
     flex-direction: row;
     align-items: center;
     text-align: left;
-    padding: 80px 40px;
-    gap: 80px;
+    padding: 20px;
+    gap: 20px;
     }
 
     /*front billede i rammme*/
@@ -202,6 +263,11 @@ margin: 20px 0;
         max-width: 550px;
     }
     .framesheila-img img {
-    max-width: 450px;
+    max-width: 350px;
+    }
+
+    /*about me*/
+    .about-me{
+    flex-direction: row;
     }
 }
