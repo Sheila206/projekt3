@@ -1,3 +1,4 @@
+
 :root{
     --space-s:20px;
     --space-m:40px;
@@ -5,14 +6,32 @@
     --space-xl:120px;
     --typografi-color:#4B341D; 
     --background-color:#F5F3EE; 
+    --border-bottom:#8B6F4E;
+    --section-padding-desktop: 140px
 }
 
+html{
+    scroll-padding-top: 120px;
+}
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/*header som er sticky*/
+header{
+    position: sticky;
+    top:0;
+    background-color: var(--background-color);
+    z-index: 1000;
+}
+
+section{
+    z-index: 1;
+}
+
 body {
     background-color: var(--background-color);
     font-family: "Playfair Display", serif;
@@ -50,15 +69,16 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items:center;
-    padding: var(--space-s) var(--space-m);
+    padding: 10px 20px;
     margin: 0 auto;
     max-width: 1200px;
-    width: 100%;
+    width: 90%;
+    border-bottom: 1px solid var(--border-bottom);
 }
 
 /*logo og menu*/
 nav img{
-   width: 120px;
+   width: 90px;
    display: block;
    order: 1;
 }
@@ -112,7 +132,7 @@ margin: var(--space-s) 0;
 .nav-links ul li a:hover:after{ width: 100%;} 
 
     .open-menu{
-    top: 20px;
+    top: 18px;
     right: 32px;
     font-size:2rem;
     display:block;
@@ -174,8 +194,15 @@ margin: var(--space-s) 0;
     padding: var(--space-m) var(--space-m);
 }
 
-
-
+/*projects*/
+.projects{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: var(--space-m) var(--space-m);
+}
 
 
 
@@ -187,6 +214,25 @@ margin: var(--space-s) 0;
     text-align: center;
     justify-content: center;
     padding: var(--space-l) var(--space-m);
+    }
+
+    /*selve pilen footer*/
+
+    }
+    .back-to-top {
+    display: inline;
+    margin-top: 40px;
+    }
+    .back-to-top i{
+    font-size: 1.8rem;
+    color: var(--border-bottom);
+    opacity: 0.6;
+    transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .back-to-top:hover i{
+    opacity:0,75;
+    transform: translateY(-6px);
     }
 
 /*lille mobil*/
@@ -216,22 +262,42 @@ margin: var(--space-s) 0;
 /*desktop version*/
 
 @media screen and (min-width:600px){
+
    /*typografi web*/    
-    h1{line-height:1.1; }
-    h2{font-size:2.4rem;}
+    h1{
+        line-height:3rem;
+        white-space: nowrap;
+     }
+
+    h1 br{display: none;}
+
+    h2{font-size:1.6rem;}
 
     p{font-size:1.3rem;}
     
     /*nav mobil*/
         nav img {
-        width: 150px;
+        width: 110px;
     }
 
-    .nav-links{
-        display: flex;
-        gap:40px;
+    nav{
+        max-width: 1200px;
+        width: 90%;
+        margin: 0 auto;
     }
-        .nav-links ul {
+    /*hvis menu vandret*/
+    .nav-links{
+        position: static;
+        right: 0;
+        width: auto;
+        height: auto;
+        background: none; /*fjerner baggrund*/
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap:var(--space-m);
+    }
+    .nav-links ul {
         display: flex;
         flex-direction: row;
         gap: 30px;
@@ -241,17 +307,23 @@ margin: var(--space-s) 0;
     display: none;
     }
 
-    /*forside layout mobil*/
+    /*forside layout desktop*/
     .textbox {
     display: flex;
     flex-direction: row;
     align-items: center;
     text-align: left;
-    padding: 20px;
-    gap: 20px;
+    padding: 140px 20px 110px 20px;
+    gap: 50px;
     }
 
+
     /*front billede i rammme*/
+     .framesheila-img img {
+    max-width: 520px;
+    height: auto;
+    }
+
     .framesheila-img{
         order: 1;
         display: flex;
@@ -260,14 +332,17 @@ margin: var(--space-s) 0;
         padding: 0px;
     }  
     .textbox-text {
-        max-width: 550px;
-    }
-    .framesheila-img img {
-    max-width: 350px;
+        max-width: 480px;
     }
 
     /*about me*/
     .about-me{
     flex-direction: row;
+    padding: 100px 20px 160px 20px;
+    }
+
+    /*projects*/
+    .projects{
+        padding: 120px 20px 190px 20px;
     }
 }

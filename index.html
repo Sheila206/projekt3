@@ -9,9 +9,10 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="stylesheet"
     </head>
 
-    <body>
+    <body id="top">
 
         <header> 
                 <nav>
@@ -21,9 +22,9 @@
                 <div class="nav-links">     
                     <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
                       <ul>
-                        <li><a href="#">About me</a></li>
-                        <li><a href="#">Projects</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#about">About me</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
                       </ul>
                     </div>
                 </nav>
@@ -42,33 +43,35 @@
                 </div>
             </section>
         
-            <section class="about-me">
+            <section id="about" class="about-me">
                 <div class="about-me-text"> 
                     <h2>About me</h2>
                     <p>I’m currently studying Multimedia Design at UCL, where I’m developing my skills in digital design, photography and visual storytelling.
-I’m drawn to warm, simple aesthetics and the small details that give a design its personality. I love adding small personal touches to my work — details that make a visual feel warm, intentional and uniquely mine.
-I aim to create designs that feel atmospheric, engaging and thoughtfully crafted. I enjoy collaborating with others, learning new tools and bringing ideas to life with a structured and thoughtful approach.
-I’m excited to keep growing my skills and contribute to creative projects where care, quality and visual identity truly matter.</p>
+                        I’m drawn to warm, simple aesthetics and the small details that give a design its personality. I love adding small personal touches to my work — details that make a visual feel warm, intentional and uniquely mine.
+                        I aim to create designs that feel atmospheric, engaging and thoughtfully crafted. I enjoy collaborating with others, learning new tools and bringing ideas to life with a structured and thoughtful approach.
+                        I’m excited to keep growing my skills and contribute to creative projects where care, quality and visual identity truly matter.</p>
                 </div>
             </section>
 
-            <section class="projects">
-                <div class="projects-text"> 
-                    <h2>Projects</h2>
-                    <p> 6 Projects</p>
-                 </div>
-                </section>
+            <section id="projects" class="projects">
+                <h2>Projects</h2>
+            <!--image slideshow from w3schools-->
+            </section>
+            
+
+
          </main>
 
 
         <footer>
-            <section class="footer">
+            <section id="contact" class="footer">
                 <div class="footer-text">
                      <h2>Contact</h2>
                     <p> Sheila Sønnichsen <br>
                     Email: Nichsen5k@gmail.com <br>
                     Tlf: +45 60 53 06 51 
                     </p>
+                    <a href="#top" class="back-to-top"><i class="fas fa-angle-up"></i></a> <!--pil der linker til top-->
                 </div>
             </section>
         </footer>
