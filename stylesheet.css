@@ -1,13 +1,16 @@
 
 :root{
+ /*spacing scale*/
     --space-s:20px;
     --space-m:40px;
     --space-l:80px;
     --space-xl:120px;
+/*colors*/
     --typografi-color:#4B341D; 
     --background-color:#F5F3EE; 
     --border-bottom:#8B6F4E;
-    --section-padding-desktop: 140px
+/*layout*/
+    --section-max-width: 1110px;
 }
 
 html{
@@ -20,18 +23,6 @@ html{
     box-sizing: border-box;
 }
 
-/*header som er sticky*/
-header{
-    position: sticky;
-    top:0;
-    background-color: var(--background-color);
-    z-index: 1000;
-}
-
-section{
-    z-index: 1;
-}
-
 body {
     background-color: var(--background-color);
     font-family: "Playfair Display", serif;
@@ -39,72 +30,114 @@ body {
 }
 /*typografi for h1 h2 og p*/
 
+h1,
+h2,
+p{
+    color: var(--typografi-color)
+}
+
 h1{
     font-weight: 900;
-    color: var(--typografi-color);
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     margin-bottom: var(--space-s);
 }
 
 h2{ 
     font-weight: 600;
     font-size: 1.4rem;
-    color: var(--typografi-color);
     margin-bottom: var(--space-s);
 }
-/*h2 på en linje*/
-.single-line{
-    white-space: normal;
-    text-align: center;
-}
+
 p{
-    font-size:1.1rem;
+    font-size:1.05rem;
     margin-bottom: var(--space-s);
-    color:var(--typografi-color);
+}
+/*hero specifik typografi*/
+.textbox h1{
+    font-size: 1.8rem;
+    font-weight: 800;
+    line-height: 2.45rem;
+    margin: 0 auto 22px;
+    max-width: 320px;
+    text-align: center;
+
+}
+.textbox h2{
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+    max-width: 340px;
+    margin-bottom: 22px;
+}
+.textbox p{
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0 auto;
+    line-height: 1.6rem;
+    opacity: 0.95;
+    text-align: center;
+    max-width: 330px;
 }
 
-/*navigation - mobile first*/
-
-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items:center;
-    padding: 10px 20px;
+/*layout helpers*/
+.section{
+    max-width: var(--section-max-width);
     margin: 0 auto;
-    max-width: 1200px;
-    width: 90%;
+}
+
+section{
+    padding: 60px 20px;
+}
+
+/*header/navigation*/
+header{
+    position: sticky;
+    top:0;
+    background-color: var(--background-color);
+    z-index: 1000;
     border-bottom: 1px solid var(--border-bottom);
 }
 
-/*logo og menu*/
-nav img{
-   width: 90px;
-   display: block;
-   order: 1;
+.nav{
+    max-width: var(--section-max-width);
+    margin: 0 auto;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
 }
 
+.nav-logo img{
+    width: 70px;
+    display: block;
+    height: auto;
+}
 
 /*menu links mobile*/
 .nav-links{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        width: 70%;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        right: -100%;
-        z-index: 200;
-        background-color: #F5F3EE;
-        transition: all 0.3s ease-in-out;
-        gap:var(--space-m);
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+
+      width: 70%;
+     height: 100vh;
+     position: fixed;
+     top: 0;
+     right: -100%;
+     z-index: 200;
+
+     background-color: var(--background-color);
+     transition: all 0.3s ease-in-out;
+     gap:var(--space-m);
+     padding-top:60px;
 }
 
 .nav-links ul {
-list-style: none;
-text-align: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links ul li{
@@ -121,28 +154,29 @@ margin: var(--space-s) 0;
 .nav-links ul li a::after{
     content:'';
     position: absolute;
-    bottom: 0;
+    bottom: -4px;
     left: 0;
     width: 0;
     height: 1px;
     background-color:#4B341D;
     transition: 0.15s ease-in-out;
 }
+.nav-links ul li a:hover:after{
+   width: 100%; 
+}
+ 
 /* mobil brugermenu*/
-.nav-links ul li a:hover:after{ width: 100%;} 
-
     .open-menu{
-    top: 18px;
-    right: 32px;
     font-size:2rem;
-    display:block;
+    display: block;
     color:var(--typografi-color);
+    cursor: pointer;
 }
 
 .close-menu{
     position: absolute;
-    top: 20px;
-    right: 32px;
+    top: 26px;
+    right: 26px;
     font-size:2rem;
     display:block;
     cursor: pointer;
@@ -163,26 +197,30 @@ margin: var(--space-s) 0;
     align-items: center;
     justify-content: center;
     text-align: center;
-    gap: var(--space-s);
-    padding: var(--space-s);
+    padding: 80px 20px 40px;
 }
 .framesheila-img{
     order: 2;
+    margin-top: 40px;
 }
 
 .textbox-text{
     order: 1;
     flex:1;
-    max-width: 350px;
+    max-width: none;
     text-align: center;
+    padding-inline: 10px;
 
 }
 .framesheila-img img{
     width: 100%;
-    max-width: 350px;
+    max-width: 280px;
     margin: 0 auto;
     display: block;
+    margin-bottom: var(--space-s);
 }
+
+
 
 /*about me sektion*/
 .about-me {
@@ -191,7 +229,7 @@ margin: var(--space-s) 0;
     align-items: center;
     text-align: center;
     justify-content: center;
-    padding: var(--space-m) var(--space-m);
+    background-color: #F3EFEA;
 }
 
 /*projects*/
@@ -201,10 +239,12 @@ margin: var(--space-s) 0;
     align-items: center;
     text-align: center;
     justify-content: center;
-    padding: var(--space-m) var(--space-m);
 }
 
-
+.project-info{
+    font-size: 1.1rem;
+    margin-top: var(--space-s);
+}
 
 /*footer and contact*/
     .footer {
@@ -213,15 +253,12 @@ margin: var(--space-s) 0;
     align-items: center;
     text-align: center;
     justify-content: center;
-    padding: var(--space-l) var(--space-m);
     }
 
-    /*selve pilen footer*/
-
-    }
+/*selve pilen footer*/
     .back-to-top {
-    display: inline;
-    margin-top: 40px;
+    display: inline-block;
+    margin-top: 50px;
     }
     .back-to-top i{
     font-size: 1.8rem;
@@ -231,101 +268,104 @@ margin: var(--space-s) 0;
     }
 
     .back-to-top:hover i{
-    opacity:0,75;
+    opacity:0.75;
     transform: translateY(-6px);
     }
-
-/*lille mobil*/
-@media screen and (max-width:480px) {
-   .textbox{
-    gap: 20px;
-    padding: 20px;
-   }
-   .textbox-text h1 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-   }
-    .textbox-text h2 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-   }
-   .textbox-text p{
-    font-size: 1rem;
-   }
-   .framesheila-img{
-    max-width: 280px;
-   }
-}
-
 
 
 /*desktop version*/
 
 @media screen and (min-width:600px){
 
-   /*typografi web*/    
-    h1{
-        line-height:3rem;
-        white-space: nowrap;
-     }
-
-    h1 br{display: none;}
-
-    h2{font-size:1.6rem;}
-
-    p{font-size:1.3rem;}
-    
-    /*nav mobil*/
-        nav img {
-        width: 110px;
+   /*hero typografi web*/    
+   .textbox h1 {
+    font-size: 2.8rem;
+    line-height: 3.3rem;
+    margin-bottom: 22px;
+    max-width: 520px;
     }
 
-    nav{
-        max-width: 1200px;
-        width: 90%;
-        margin: 0 auto;
+    .textbox h2 {
+        font-size: 1.6rem;
+        margin-bottom: 22px;
+        max-width: 420px;
     }
-    /*hvis menu vandret*/
-    .nav-links{
-        position: static;
-        right: 0;
-        width: auto;
-        height: auto;
-        background: none; /*fjerner baggrund*/
+
+    .textbox p {
+        font-size: 1.2rem;
+        max-width: 500px;
+        line-height: 1.9rem;
+    }
+/*header desktop*/
+    .nav{
+        max-width: var(--section-max-width);
         display: flex;
+        justify-content: space-between;
         align-items: center;
-        justify-content: center;
-        gap:var(--space-m);
-    }
-    .nav-links ul {
-        display: flex;
-        flex-direction: row;
-        gap: 30px;
+        padding: 16px 20px;
+        margin: 0 auto;
+
+    }    
+    
+    .nav-logo img{
+        width: 115px;
     }
 
     .open-menu, .close-menu{
     display: none;
     }
 
+    #check {
+        display: none;
+    }
+
+    .nav-links{
+        position: static;
+        width: auto;
+        height: auto;
+        background: none; /*fjerner baggrund*/
+        flex-direction: row;
+        align-items: center;
+        justify-content: end;
+        gap: 0;
+        padding-top:0;
+    }
+
+    .nav-links ul {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-links a{
+        display: flex;
+        align-items: center;
+        padding: 0;
+        line-height: 1;
+    }
+
     /*forside layout desktop*/
     .textbox {
     display: flex;
-    flex-direction: row;
     align-items: center;
+    justify-content: center;
+    padding: 160px 20px 140px 20px;
+    gap: 80px;
     text-align: left;
-    padding: 140px 20px 110px 20px;
-    gap: 50px;
+    flex-direction: row;
     }
 
 
     /*front billede i rammme*/
      .framesheila-img img {
-    max-width: 520px;
+    max-width: 500px;
     height: auto;
     }
 
     .framesheila-img{
-        order: 1;
+        order: 2;
         display: flex;
         justify-content: center;
         text-align: center;
@@ -333,12 +373,20 @@ margin: var(--space-s) 0;
     }  
     .textbox-text {
         max-width: 480px;
+        order: 1;
+        text-align: left;
     }
 
     /*about me*/
     .about-me{
-    flex-direction: row;
-    padding: 100px 20px 160px 20px;
+    display: flex;
+    justify-content: center;
+    padding: 160px 20px;
+    }
+
+    .about-me-text{
+        max-width: 600px;
+        text-align: left;
     }
 
     /*projects*/
