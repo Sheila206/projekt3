@@ -336,32 +336,6 @@ margin: var(--space-s) 0;
     display: block;
 }
 
-/*footer and contact*/
-    .footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    }
-
-/*selve pilen footer*/
-    .back-to-top {
-    display: inline-block;
-    margin-top: 50px;
-    }
-    .back-to-top i{
-    font-size: 1.8rem;
-    color: var(--border-bottom);
-    opacity: 0.6;
-    transition: opacity 0.2s, transform 0.2s;
-    }
-
-    .back-to-top:hover i{
-    opacity:0.75;
-    transform: translateY(-6px);
-    }
-
 
 /*desktop version*/
 
@@ -470,12 +444,12 @@ margin: var(--space-s) 0;
     /*about me*/
     .about-me{
     justify-content: center;
-    padding: 120px 20px 60px;
+    padding: 80px 20px 30px;
     }
 
     .about-me-text{
         max-width: 600px;
-        text-align: left;
+        text-align: center;
         margin: 0 auto;
     }
 
@@ -512,5 +486,18 @@ margin: var(--space-s) 0;
     .moodboard-wrapper:hover .moodboard-img{
         transform: scale(1.15);
     }
+    /*slider*/
+        .slider {
+        width: 95%; /* Make the slider take up more width on smaller screens */
+    }
 
+    .slide img {
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .slides {
+        flex-direction: column; /* Stack slides vertically for smaller screens */
+        transition: none; /* Disable transition to prevent issues on smaller displays */
+    }
 }
+
