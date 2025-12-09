@@ -245,6 +245,69 @@ margin: var(--space-s) 0;
     font-size: 1.1rem;
     margin-top: var(--space-s);
 }
+/*grid wrapper*/
+.project-grid{
+    display: flex;
+    flex-direction: column; /*1 box per række*/
+    gap:30px; /*afstand*/
+    width: 100%;
+    margin-top: 40px;
+}
+/*hver box*/
+.project-box{
+    background-color: #F3EFEA;
+    border: 1px solid var(--border-bottom);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: left;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+.project-box:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    background-color: #F8F5F0;
+}
+
+/*billeder til project*/
+.project-box img{
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    margin: 0 auto 15px;
+    display: block;
+}
+
+/*overskrift til boxen*/
+.project-box h3{
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--typografi-color);
+}
+
+/*beskrivelse af tekst*/
+.project-box p {
+    font-size: 1rem;
+    opacity: 0.9;
+    color: var(--typografi-color);
+}
+
+/*giver skygge til moodboard billede*/
+ .moodboard-img {
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+/*open moodbaord full størrelse*/
+.fullview-link{
+    display: inline;
+    margin: 12px 0 20px 0;
+    font-size: 0.9rem;
+    color: var(--typografi-color);
+    opacity: 0.85;
+}
+.fullview-link:hover{
+    opacity: 1;
+}
+
 
 /*footer and contact*/
     .footer {
@@ -393,4 +456,15 @@ margin: var(--space-s) 0;
     .projects{
         padding: 120px 20px 190px 20px;
     }
+
+    .project-grid{
+        display: grid;
+        grid-template-columns: repeat(2,1fr); /*3 projecter på en række*/
+        gap: 40px;
+        max-width: 1200px;
+        margin: 60px auto 0;
+
+    }
+
+
 }
