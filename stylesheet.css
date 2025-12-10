@@ -382,6 +382,20 @@ margin: var(--space-s) 0;
     margin-bottom: 15px;
 }
 
+/*foto projekt side om side og skygge*/
+ .before-after-side {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+ .before-after-side img {
+    width: 100%;
+    max-width: 260px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+
 
 /*footer*/
 .footer{
