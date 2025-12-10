@@ -533,7 +533,7 @@ margin: var(--space-s) 0;
     .moodboard-img {
         max-width: 500px; /* prøv 500–650px */
     }
-}
+
     .moodboard-wrapper:hover .moodboard-img{
         transform: scale(1.15);
     }
