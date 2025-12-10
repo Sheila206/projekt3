@@ -52,6 +52,16 @@ p{
     font-size:1.05rem;
     margin-bottom: var(--space-s);
 }
+
+a{
+    color: var(--typografi-color);
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
 /*hero specifik typografi*/
 .textbox h1{
     font-size: 1.8rem;
