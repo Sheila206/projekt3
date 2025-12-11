@@ -403,6 +403,26 @@ margin: var(--space-s) 0;
     text-align: center;
     opacity: 0.75;
 }
+/*video størrelse*/
+/*hover på selve video billede og fjern clip*/
+.video-wrapper{
+    max-width: 250px;
+    overflow:visible;
+    margin: 0 auto;
+}
+
+/*giver skygge til video*/
+ .project-video {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    transition: transform 0.4s ease;
+    display: block;
+ }
+.video-wrapper:hover .project-video{
+    transform: scale(1.15);
+}
+
 
 /*footer*/
 .footer{
@@ -568,5 +588,11 @@ margin: var(--space-s) 0;
     .moodboard-wrapper:hover .moodboard-img{
         transform: scale(1.15);
     }
+    .project-video {
+    max-width: 600px;
+    margin: 0 auto;
+    display: block;
+}
+
 }
 
