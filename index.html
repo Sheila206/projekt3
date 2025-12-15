@@ -11,6 +11,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     </head>
 
+    <!--benytter JS til at åbne og lukke menu ved mobil-->
     <body id="top">
         <header> 
                 <nav class="nav">
@@ -23,11 +24,11 @@
                     <label for="check" class="close-menu">
                         <img src="images/kryds.svg" alt="x">
                     </label>
-                      <ul>
-                        <li><a href="#about">About me</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                      </ul>
+                        <ul>
+                        <li><a href="#about" onclick="document.getElementById('check').checked = false">About me</a></li>
+                        <li><a href="#projects" onclick="document.getElementById('check').checked = false">Projects</a></li>
+                        <li><a href="#contact" onclick="document.getElementById('check').checked = false">Contact</a></li>
+                        </ul>
                     </div>
                 </nav>
         </header>
@@ -82,7 +83,7 @@
                             </div>
                             <h3>Moodboard</h3>
                             <p>A small visual exploration of Scandinavian fashion identity — focusing on mood, texture and playful minimalism across four Nordic brands.
-                            <br>Tools:Adobe Express, Photoshop</p>
+                            <br>Tools: Adobe Express, Photoshop</p>
                         </div>
                         
                         <div class="project-box">
@@ -118,7 +119,17 @@
                             <p>A product edit focused on clean, soft tones and subtle color correction.The goal was to enhance material texture, clarity and light while keeping the natural look intact.
                             <br> Tools: Camera, Adobe Photoshop and Adobe Lightroom</p>
                         </div>
-
+                        <div class="project-box">
+                                <div class="newarrivals">
+                                <video class="project-video" autoplay muted loop playsinline>
+                                <source src="images/newarrials.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <h3>Hand-Drawn Experiment</h3>
+                            <p>A small visual experiment created in Photoshop, exploring hand-drawn expression, texture and playful form. The project focuses on spontaneity and imperfection as a contrast to more structured design work.
+                            <br>Tools: Adobe Photoshope
+                            </p>
+                        </div>
                         <div class="project-box">
                             <div class="video-wrapper">
                                 <video class="project-video" autoplay muted loop playsinline>
@@ -138,12 +149,6 @@
                              The focus was on visual hierarchy and readability, creating a clear and balanced digital experience.
                              <br>Tools: Figma
                             </p>
-                        </div>
-
-                        <div class="project-box">
-                            <img src="" alt="">
-                            <h3>project 6</h3>
-                            <p>kort beskrivelse</p>
                         </div>
                     </div>
             </section>

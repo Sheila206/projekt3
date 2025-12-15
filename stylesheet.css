@@ -297,6 +297,7 @@ margin: var(--space-s) 0;
     text-align: left;
     transition: transform .2s ease, box-shadow .2s ease;
 }
+
 .project-box:hover{
     transform: translateY(-4px);
     box-shadow: 0 6px 18px rgba(0,0,0,0.1);
@@ -350,7 +351,7 @@ margin: var(--space-s) 0;
     overflow-x: auto;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch; /* WebKit-specific styling for smoother scrolling */
     display: block;
     width: 100%;
 }
@@ -405,21 +406,29 @@ margin: var(--space-s) 0;
 }
 /*video størrelse*/
 /*hover på selve video billede og fjern clip*/
-.video-wrapper{
+.video-wrapper {
     max-width: 250px;
-    overflow:visible;
-    margin: 0 auto;
+    margin: 0 auto 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12); /*skygge til videoen*/
+    overflow: hidden;
 }
 
-/*giver skygge til video*/
- .project-video {
+.project-video {
     width: 100%;
-    height: auto;
-    transition: transform 0.4s ease;
     display: block;
- }
-.video-wrapper:hover .project-video{
-    transform: scale(1.15);
+    transition: transform 0.4s ease;
+}
+
+.video-wrapper:hover .project-video {
+    transform: scale(1.05);
+}
+.newarrivals{
+    max-width: 400px;
+    margin: 0 auto 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12); /*skygge til videoen*/
+    overflow: hidden;
 }
 
 
