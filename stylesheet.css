@@ -296,7 +296,13 @@ margin: var(--space-s) 0;
     padding: 20px;
     text-align: left;
     transition: transform .2s ease, box-shadow .2s ease;
+    display: flex;
+    flex-direction: column;
 }
+.project-box h3 {
+    margin-top: 20px;
+}
+
 
 .project-box:hover{
     transform: translateY(-4px);
@@ -430,6 +436,10 @@ margin: var(--space-s) 0;
     box-shadow: 0 10px 30px rgba(0,0,0,0.12); /*skygge til videoen*/
     overflow: hidden;
 }
+.some-project img {
+    border-radius: 16px;
+    max-width: 225px;
+}
 
 
 /*footer*/
@@ -440,6 +450,10 @@ margin: var(--space-s) 0;
 }
 .footer-text{
     text-align: center;
+}
+.footer a {
+    color: var(--typografi-color);
+    text-decoration: underline;
 }
 
 /*desktop version*/
