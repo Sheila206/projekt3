@@ -265,6 +265,7 @@ margin: var(--space-s) 0;
     border-radius: 8px;
     padding: 4px;
     filter: sepia(70%) saturate(60%) brightness(95%);/*gør iconerne brunlige*/
+    align-items: center;
 }
 
 /*projects*/
