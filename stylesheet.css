@@ -132,7 +132,7 @@ header{
      text-align: center;
 
       width: 70%;
-     height: 100vh;
+     height: 100svh;
      position: fixed;
      top: 0;
      right: -100%;
@@ -246,7 +246,7 @@ margin: var(--space-s) 0;
 .tools-section{
     padding: 30px 20px 40px;
     background-color: #F3EFEA;
-    margin: -10px;;
+    margin: 0;;
     text-align: center;
     justify-items: center;
 }
@@ -337,7 +337,7 @@ margin: var(--space-s) 0;
 /*tilliad zoom ud af boks*/
 .project-box .zoom-outside{
     overflow: visible;
-    position: fixed;
+    position: relative;
 }
 
 /*hover på selve moodboard billede og fjern clip*/
