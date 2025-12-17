@@ -12,6 +12,7 @@
 /*layout*/
     --section-max-width: 1110px;
 }
+/* offset for anchor links to avoid sticky header overlap */
 section[id]{
     scroll-margin-top: 74px;
 }
@@ -27,7 +28,7 @@ body {
     font-family: "Playfair Display", serif;
     line-height: 1.6;
 }
-/*typografi for h1 h2 og p*/
+/* Base typography */
 
 h1,
 h2,
@@ -51,7 +52,7 @@ p{
     font-size:1.05rem;
     margin-bottom: var(--space-s);
 }
-
+/* Links */
 a{
     color: var(--typografi-color);
     text-decoration: none;
@@ -61,7 +62,7 @@ a:hover{
     text-decoration: underline;
 }
 
-/*hero specifik typografi*/
+/*Hero typography*/
 .textbox h1{
     font-size: 1.8rem;
     font-weight: 800;
@@ -88,7 +89,7 @@ a:hover{
     max-width: 330px;
 }
 
-/*layout helpers*/
+/*section layout helpers*/
 .section{
     max-width: var(--section-max-width);
     margin: 0 auto;
@@ -98,7 +99,7 @@ section{
     padding: 60px 20px;
 }
 
-/*header/navigation*/
+/*header and navigation*/
 header{
     position: sticky;
     top:0;
@@ -118,14 +119,14 @@ header{
     justify-content: space-between;
     align-items:center;
 }
-
+/* Logo image */
 .nav-logo img{
     width: 70px;
     display: block;
     height: auto;
 }
 
-/*menu links mobile*/
+/*Mobile navigation menu*/
 .nav-links{
      display: flex;
      flex-direction: column;
@@ -145,17 +146,17 @@ header{
      gap:var(--space-m);
      padding-top:60px;
 }
-
+/* Remove list styling */
 .nav-links ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
-
+/* Remove list styling */
 .nav-links ul li{
 margin: var(--space-s) 0;
 }
-
+/* Navigation link styling */
 .nav-links ul li a{
     color: var(--typografi-color);
     text-decoration: none;
@@ -163,6 +164,7 @@ margin: var(--space-s) 0;
     transition: 0.15s ease-in-out; 
     position:relative;
 }
+/* Animated underline on hover */
 .nav-links ul li a::after{
     content:'';
     position: absolute;
@@ -177,14 +179,14 @@ margin: var(--space-s) 0;
    width: 100%; 
 }
  
-/* mobil brugermenu*/
+/* Burger menu button */
     .open-menu{
     font-size:2rem;
     display: block;
     color:var(--typografi-color);
     cursor: pointer;
 }
-
+/* Close menu button */
 .close-menu{
     position: absolute;
     top: 26px;
@@ -195,14 +197,14 @@ margin: var(--space-s) 0;
     color:var(--typografi-color);
     }
 
+/* Hide checkbox */
 #check {display: none;}
 
+/* Show menu when checkbox is checked */
 #check:checked ~ .nav-links {
     right: 0;}
 
-/*main*/
-
-/*front side*/
+/*Hero layout*/
 .textbox {
     display: flex;
     flex-direction: column;
@@ -234,7 +236,7 @@ margin: var(--space-s) 0;
 
 
 
-/*about me sektion*/
+/*about me section*/
 .about-me {
     display: flex;
     flex-direction: column;
@@ -244,7 +246,7 @@ margin: var(--space-s) 0;
     background-color: #F3EFEA;
      padding: 10px 20px 20px;
 }
-/*tools*/
+/*tools section*/
 .tools-section{
     padding: 30px 20px 40px;
     background-color: #F3EFEA;
@@ -255,23 +257,23 @@ margin: var(--space-s) 0;
     margin-bottom: 10px;
     line-height: 1.4;
 }
+/* Tool icons layout using CSS Grid Safari-safe */
 .tool-icon{
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 6px;
+    display: grid;
+    grid-template-columns: repeat(7, 40px);
     justify-content: center;
+    gap: 6px;
     width: 100%;
 }
+/* Tool icons styling */
 .tool-icon img{
+    display: inline-block;
     width: 40px;
-    height: auto;
-    border-radius: 8px;
-    padding: 4px;
+    height: auto;  
     filter: sepia(70%) saturate(60%) brightness(95%);/*gør iconerne brunlige*/
-    align-items: center;
 }
 
-/*projects*/
+/*Projects section*/
 .projects{
     display: flex;
     flex-direction: column;
@@ -284,7 +286,7 @@ margin: var(--space-s) 0;
     font-size: 1.1rem;
     margin-top: var(--space-s);
 }
-/*grid wrapper*/
+/* Project grid (mobile layout) */
 .project-grid{
     display: flex;
     flex-direction: column; /*1 box per række*/
@@ -292,7 +294,7 @@ margin: var(--space-s) 0;
     width: 100%;
     margin-top: 40px;
 }
-/*hver box*/
+/* Individual project card */
 .project-box{
     background-color: #F3EFEA;
     border: 1px solid var(--border-bottom);
@@ -307,14 +309,14 @@ margin: var(--space-s) 0;
     margin-top: 20px;
 }
 
-
+/* Hover effect on project cards */
 .project-box:hover{
     transform: translateY(-4px);
     box-shadow: 0 6px 18px rgba(0,0,0,0.1);
     background-color: #F8F5F0;
 }
 
-/*billeder til project*/
+/*pictures projects*/
 .project-box img{
     width: 100%;
     max-width: 260px;
@@ -323,40 +325,38 @@ margin: var(--space-s) 0;
     display: block;
 }
 
-/*overskrift til boxen*/
 .project-box h3{
     font-size: 1.2rem;
     margin-bottom: 10px;
     color: var(--typografi-color);
 }
 
-/*beskrivelse af tekst*/
 .project-box p {
     font-size: 1rem;
     opacity: 0.9;
     color: var(--typografi-color);
 }
 
-/*tilliad zoom ud af boks*/
+/*zoom out of box*/
 .project-box .zoom-outside{
     overflow: visible;
     position: relative;
 }
 
-/*hover på selve moodboard billede og fjern clip*/
+/*hover*/
 .moodboard-wrapper{
     max-width: 420px;
     overflow:visible;
     margin: 0 auto;
 }
 
-/*giver skygge til moodboard billede*/
+/*shadow*/
  .moodboard-img {
     box-shadow: 0 4px 24px rgba(0,0,0,0.08);
     transition: transform 0.4s ease;
     display: block;
 }
-/*slide med toch*/
+/*slide with toch*/
 .touch-slider {
     overflow-x: auto;
     overflow-y: hidden;
@@ -367,7 +367,7 @@ margin: var(--space-s) 0;
 }
 
 .touch-slider::-webkit-scrollbar {
-    display: none; /* ingen scrollbar */
+    display: none; /* no scrollbar */
 }
 
 .slides {
@@ -393,7 +393,6 @@ margin: var(--space-s) 0;
     margin-bottom: 15px;
 }
 
-/*foto projekt side om side og skygge*/
  .before-after-side {
     display: flex;
     gap: 20px;
@@ -405,7 +404,7 @@ margin: var(--space-s) 0;
     border-radius: 8px;
     box-shadow: 0 6px 18px rgba(0,0,0,0.1);
 }
-/*til before and after style*/
+/*before and after style*/
 .label{
     font-size: 0.9rem;
     color: var(--typografi-color);
@@ -414,8 +413,8 @@ margin: var(--space-s) 0;
     text-align: center;
     opacity: 0.75;
 }
-/*video størrelse*/
-/*hover på selve video billede og fjern clip*/
+/*video size*/
+/*hover on video*/
 .video-wrapper {
     max-width: 250px;
     margin: 0 auto 2rem;
@@ -464,7 +463,7 @@ margin: var(--space-s) 0;
 
 @media screen and (min-width:600px){
 
-   /*hero typografi web*/    
+   /*Hero typography desktop*/    
    .textbox h1 {
     font-size: 2.8rem;
     line-height: 3.3rem;
@@ -483,7 +482,7 @@ margin: var(--space-s) 0;
         max-width: 500px;
         line-height: 1.9rem;
     }
-/*header desktop*/
+/*Header and navigation desktop*/
     .nav{
         max-width: var(--section-max-width);
         display: flex;
@@ -497,20 +496,22 @@ margin: var(--space-s) 0;
     .nav-logo img{
         width: 115px;
     }
-
+    /* Hide burgermenu on desktop */
     .open-menu, .close-menu{
     display: none;
     }
 
+    /* Hide checkbox (only used for mobile menu) */
     #check {
         display: none;
     }
 
+    /* Desktop navigation layout */
     .nav-links{
         position: static;
         width: auto;
         height: auto;
-        background: none; /*fjerner baggrund*/
+        background: none; /* Remove mobile menu background */
         flex-direction: row;
         align-items: center;
         justify-content: end;
@@ -518,6 +519,7 @@ margin: var(--space-s) 0;
         padding-top:0;
     }
 
+      /* Navigation list layout desktop */
     .nav-links ul {
         display: flex;
         flex-direction: row;
@@ -526,6 +528,7 @@ margin: var(--space-s) 0;
         padding: 0;
     }
 
+    /* Navigation link alignment */
     .nav-links a{
         display: flex;
         align-items: center;
@@ -533,7 +536,7 @@ margin: var(--space-s) 0;
         line-height: 1;
     }
 
-    /*forside layout desktop*/
+    /*Hero layout desktop*/
     .textbox {
     display: flex;
     align-items: center;
@@ -545,7 +548,7 @@ margin: var(--space-s) 0;
     }
 
 
-    /*front billede i rammme*/
+    /* Portrait image */
      .framesheila-img img {
     max-width: 500px;
     height: auto;
@@ -564,7 +567,7 @@ margin: var(--space-s) 0;
         text-align: left;
     }
 
-    /*about me*/
+    /*about me section*/
     .about-me{
     justify-content: center;
     padding: 80px 20px 30px;
@@ -576,7 +579,7 @@ margin: var(--space-s) 0;
         margin: 0 auto;
     }
 
-    /*tools*/
+    /*tools section*/
     .tools-section{
        padding-top: 20px;
        padding-bottom: 100px;
@@ -592,33 +595,37 @@ margin: var(--space-s) 0;
 
     }
 
-    /*projects*/
+    /*projects section*/
     .projects{
         padding: 120px 20px 190px 20px;
     }
 
+    /* Project grid layout (two columns on desktop) */
     .project-grid{
         display: grid;
-        grid-template-columns: repeat(2,1fr); /*3 projecter på en række*/
+        grid-template-columns: repeat(2,1fr); 
         gap: 40px;
         max-width: 1200px;
         margin: 60px auto 0;
 
     }
 
+    /* Moodboard image sizing */
     .moodboard-wrapper img,
     .moodboard-img {
-        max-width: 500px; /* prøv 500–650px */
+        max-width: 500px;
     }
 
+    /* Zoom effect on hover */
     .moodboard-wrapper:hover .moodboard-img{
         transform: scale(1.15);
     }
+
+    /* Project video sizing */
     .project-video {
     max-width: 600px;
     margin: 0 auto;
     display: block;
 }
-
 }
 
